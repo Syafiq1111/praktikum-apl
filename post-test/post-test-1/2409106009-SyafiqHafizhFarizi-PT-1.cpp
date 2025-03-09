@@ -1,4 +1,9 @@
 #include <iostream>
+#define ANSI_COLOR_RED     "\x1b[31m"
+#define ANSI_COLOR_GREEN   "\x1b[32m"
+#define ANSI_COLOR_YELLOW  "\x1b[33m"
+#define ANSI_COLOR_BLUE    "\x1b[34m"
+#define ANSI_COLOR_RESET   "\x1b[0m"
 
 using namespace std;
 
@@ -6,46 +11,60 @@ void ubah() {
     int pilihan;
     double nilai;
 
-    cout << "\nPilih jenis konversi:\n";
-    cout << "1. Konversi Meter ke (Centimeter, Mile, Foot)" << endl;
-    cout << "2. Konversi Centimeter ke (Meter, Mile, Foot)" << endl;
-    cout << "3. Konversi Mile ke (Meter, Centimeter, Foot)" << endl;
-    cout << "4. Konversi Foot ke (Meter, Centimeter, Mile)" << endl;
-    cout << "Masukkan pilihan Anda: " << endl;
+    cout << endl;
+    cout << ANSI_COLOR_BLUE "==========================================" ANSI_COLOR_RESET << endl;
+    cout << ANSI_COLOR_BLUE "        PILIH JENIS KONVERSI          " ANSI_COLOR_RESET << endl;
+    cout << ANSI_COLOR_BLUE "==========================================" ANSI_COLOR_RESET << endl;
+
+    cout << ANSI_COLOR_RED   "1. Konversi Meter ke (Centimeter, Mile, Foot)" ANSI_COLOR_RESET << endl;
+    cout << ANSI_COLOR_GREEN "2. Konversi Centimeter ke (Meter, Mile, Foot)" ANSI_COLOR_RESET << endl;
+    cout << ANSI_COLOR_BLUE  "3. Konversi Mile ke (Meter, Centimeter, Foot)" ANSI_COLOR_RESET << endl;
+    cout << ANSI_COLOR_YELLOW "4. Konversi Foot ke (Meter, Centimeter, Mile)" ANSI_COLOR_RESET << endl;
+    cout << ANSI_COLOR_BLUE "==========================================" ANSI_COLOR_RESET << endl;
+
+    cout << "Masukkan pilihan Anda: ";
     cin >> pilihan;
 
     switch (pilihan) {
         case 1:
             cout << "Masukkan nilai dalam Meter: ";
             cin >> nilai;
-            cout << nilai << " Meter = " << nilai * 100 << " Centimeter" << endl;
-            cout << nilai << " Meter = " << nilai * 0.000621371 << " Mile" << endl;
-            cout << nilai << " Meter = " << nilai * 3.28084 << " Foot" << endl;
+            cout << ANSI_COLOR_YELLOW "------------------------------------------" ANSI_COLOR_RESET << endl;
+            cout << nilai << ANSI_COLOR_BLUE " Meter = " << nilai * 100 << " Centimeter" ANSI_COLOR_RESET << endl;
+            cout << nilai << ANSI_COLOR_RED " Meter = " << nilai * 0.000621371 << " Mile" ANSI_COLOR_RESET << endl;
+            cout << nilai << ANSI_COLOR_GREEN " Meter = " << nilai * 3.28084 << " Foot" ANSI_COLOR_RESET << endl;
+            cout << ANSI_COLOR_YELLOW "------------------------------------------" ANSI_COLOR_RESET << endl;
             break;
         case 2:
             cout << "Masukkan nilai dalam Centimeter: ";
             cin >> nilai;
-            cout << nilai << " Centimeter = " << nilai / 100 << " Meter" << endl;
-            cout << nilai << " Centimeter = " << nilai * 0.000621371 << " Mile" << endl;
-            cout << nilai << " Centimeter = " << nilai * 0.0328084 << " Foot" << endl;
+            cout << ANSI_COLOR_RED "------------------------------------------" ANSI_COLOR_RESET << endl;
+            cout << nilai << ANSI_COLOR_YELLOW " Centimeter = " << nilai / 100 << " Meter" ANSI_COLOR_RESET << endl;
+            cout << nilai << ANSI_COLOR_RED " Centimeter = " << nilai * 0.000621371 << " Mile" ANSI_COLOR_RESET << endl;
+            cout << nilai << ANSI_COLOR_GREEN " Centimeter = " << nilai * 0.0328084 << " Foot" ANSI_COLOR_RESET << endl;
+            cout << ANSI_COLOR_RED "------------------------------------------" ANSI_COLOR_RESET << endl;
             break;
         case 3:
             cout << "Masukkan nilai dalam Mile: ";
             cin >> nilai;
-            cout << nilai << " Mile = " << nilai * 1609.34 << " Meter" << endl;
-            cout << nilai << " Mile = " << nilai * 160934 << " Centimeter" << endl;
-            cout << nilai << " Mile = " << nilai * 5280 << " Foot" << endl;
+            cout << ANSI_COLOR_BLUE "------------------------------------------" ANSI_COLOR_RESET << endl;
+            cout << nilai << ANSI_COLOR_YELLOW " Mile = " << nilai * 1609.34 << " Meter" ANSI_COLOR_RESET << endl;
+            cout << nilai << ANSI_COLOR_BLUE " Mile = " << nilai * 160934 << " Centimeter" ANSI_COLOR_RESET << endl;
+            cout << nilai << ANSI_COLOR_GREEN " Mile = " << nilai * 5280 << " Foot" ANSI_COLOR_RESET << endl;
+            cout << ANSI_COLOR_BLUE "------------------------------------------" ANSI_COLOR_RESET << endl;
             break;
         case 4:
             cout << "Masukkan nilai dalam Foot: ";
             cin >> nilai;
-            cout << nilai << " Foot = " << nilai / 3.28084 << " Meter" << endl;
-            cout << nilai << " Foot = " << nilai * 30.48 << " Centimeter" << endl;
-            cout << nilai << " Foot = " << nilai / 5280  << " Mile" << endl;
+            cout << ANSI_COLOR_GREEN "------------------------------------------" ANSI_COLOR_RESET << endl;
+            cout << nilai << ANSI_COLOR_YELLOW " Foot = " << nilai / 3.28084 << " Meter" ANSI_COLOR_RESET << endl;
+            cout << nilai << ANSI_COLOR_BLUE " Foot = " << nilai * 30.48 << " Centimeter" ANSI_COLOR_RESET << endl;
+            cout << nilai << ANSI_COLOR_RED " Foot = " << nilai / 5280  << " Mile" ANSI_COLOR_RESET << endl;
+            cout << ANSI_COLOR_GREEN "------------------------------------------" ANSI_COLOR_RESET << endl;
             break;
-            return;
         default:
-            cout << "Pilihan tidak valid. Silakan coba lagi." << endl;
+            cout << ANSI_COLOR_RED "Pilihan tidak valid. Silakan coba lagi." ANSI_COLOR_RESET << endl;
+            cout << ANSI_COLOR_BLUE "------------------------------------------" ANSI_COLOR_RESET << endl;
     }
 }
 
